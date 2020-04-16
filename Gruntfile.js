@@ -10,12 +10,23 @@ module.exports = function( grunt ) {
         concat: {
             dist: {
                 src: [
-                    'SliderControl.js'
+                    'src/SliderControl.js'
                 ],
                 dest: 'dist/leaflet.SliderControl.min.js'
             }
+        },
+        watch: {
+            css: {
+                files: ['./src/*.scss'],
+                tasks: ['sass:dev']
+            },
+            js: {
+                files: ['./src/*.js'],
+                tasks: ['default']
+            }
         }
     });
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.registerTask('default', ['concat', 'uglify']);

@@ -5,13 +5,13 @@ The [Leaflet](http://leafletjs.com/) Time-Slider enables you to dynamically add 
 ](http://jqueryui.com/slider/).
 
 
-Check out the [Demo](http://dwilhelm89.github.io/LeafletSlider/)!
+Check out the [Demo](https://falke-design.github.io/LeafletSlider/)!
 
 
 Usage
 -----
 Add:
-* ``SliderControl.js``
+* ``SliderControl.js`` [CDN](https://cdn.jsdelivr.net/gh/Falke-Design/LeafletSlider/src/SliderControl.js)
 * [JQuery](http://code.jquery.com/jquery-1.9.1.min.js)
 * [JQueryUI - CSS](http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css)
 * [JQueryUI - JS](http://code.jquery.com/ui/1.9.2/jquery-ui.js)
@@ -36,28 +36,38 @@ map.addControl(sliderControl);
 sliderControl.startSlider();
 ````
 
-Adjust the used time property so that it fits your project:
-```javascript
-$('#slider-timestamp').html(options.markers[ui.value].feature.properties.time.substr(0, 19));
-````
+The layers must have the following structure:
 
-You can also use a range-slider by using the range property:
-```javascript
-sliderControl = L.control.sliderControl({position: "topright", layer: testlayer, range: true});
-````
+`layer.options.time = ` (if timeAttribute is `time`)
 
-If you would prefer to display only the markers at the specific timestamp specified by the slider, use
-the follow property:
+`layer.feature.properties.time = ` (if timeAttribute is `time`)
+
+#### Options
+| Option | Default | Description |
+|---|---|---|
+| position | 'topright' | The position of the Slider |
+| layer | null | **Required** The layergroup with the layers (markers) |
+| timeAttribute | 'time' | The attribute for the slider |
+| isEpoch | false | Whether the time attribute is seconds elapsed from epoch |
+| startTimeIdx | 0 | Where to start looking for a timestring|
+| timeStrLength | 19  | the size of  yyyy-mm-dd hh:mm:ss - if millis are present this will be larger |
+| maxValue | -1 | The max value of the slider |
+| minValue | 0 | The min value of the slider |
+|showAllOnStart| false | Show all layers on start|
+|range| false | To enable the range slider|
+| follow | 0 | To show only the last n layers, 0 means show all previous markers |
+|sameDate| false | Show only all markers with the current date|
+|alwaysShowDate| false | Show allways the date box|
+|rezoom| null | You can use the rezoom property to ensure the markers being displayed remain in view. The integer value will be the maximum zoom level.|
+|orderMarkers| true| Orders the markers by the timeAttribute |
+|orderDesc| false | Order the markers descending (only work if orderMarkers is true)|
+
+Add options on creating the control
 ```javascript
-sliderControl = L.control.sliderControl({position: "topright", layer: testlayer, follow: 3});
+var sliderControl = L.control.sliderControl({options});
 ```
-This example will display the current marker and the previous 2 markers on the screen. Specify a value
-of 1 (or true) to display only a single data point at a time, and a value of null (or false) to display the current marker and all previous markers. The range property overrides the follow property.
 
-You can use the rezoom property to ensure the markers being displayed remain in view. Nothing happens with a value of null (or false), but an integer value will be the maximum zoom level Leaflet uses as it updates the map's bounds for the markers displayed. 
-```javascript
-sliderControl = L.control.sliderControl({position: "topright", layer: testlayer, rezoom: 10});
-```
+####Mixed features 
 
 The Leaflet Slider can also be used for usual LayerGroups with mixed features (Markers and Lines, etc.)
 ```javascript
@@ -71,10 +81,10 @@ var pointList = [pointA, pointB];
 
 var polyline = new L.Polyline(pointList, {
     time: "2013-01-22 10:24:59+01",
-	color: 'red',
-	weight: 3,
-	opacity: 1,
-	smoothFactor: 1
+    color: 'red',
+    weight: 3,
+    opacity: 1,
+    smoothFactor: 1
 });
 
 
@@ -84,6 +94,17 @@ map.addControl(sliderControl);
 sliderControl.startSlider();
 ````
 
+#### Event
+You can listen on the slider if range has changed.
+```javascript
+sliderControl.on('rangechanged',function (e) {
+    console.log(e.markers);
+});
+```
+Returns the visible markers.
+
+
+#### Touch Support
 For touch support add:
 ```javascript
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
@@ -103,3 +124,5 @@ bower install leaflet-slider
 Author
 -----
 Dennis Wilhelm, 2013
+
+Updated by @Falke-Design 2020
