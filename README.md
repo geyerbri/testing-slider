@@ -67,7 +67,7 @@ Add options on creating the control
 var sliderControl = L.control.sliderControl({options});
 ```
 
-####Mixed features 
+#### Mixed features 
 
 The Leaflet Slider can also be used for usual LayerGroups with mixed features (Markers and Lines, etc.)
 ```javascript

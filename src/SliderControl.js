@@ -142,7 +142,6 @@ L.Control.SliderControl = L.Control.extend({
                             console.error("Time property "+ _options.timeAttribute +" not found in data");
                         }
                     }
-
                     var markers = [];
                     var i;
                     // clear markers
