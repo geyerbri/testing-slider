@@ -12,9 +12,8 @@ Usage
 -----
 Add:
 * ``SliderControl.js`` [CDN](https://cdn.jsdelivr.net/gh/Falke-Design/LeafletSlider/src/SliderControl.js)
-* [JQuery](http://code.jquery.com/jquery-1.9.1.min.js)
-* [JQueryUI - CSS](http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css)
-* [JQueryUI - JS](http://code.jquery.com/ui/1.9.2/jquery-ui.js)
+* [JQuery](https://cdnjs.com/libraries/jquery)
+* [JQueryUI](https://cdnjs.com/libraries/jqueryui)
 
 to your normal Leaflet map.
 
@@ -107,7 +106,7 @@ Returns the visible markers.
 #### Touch Support
 For touch support add:
 ```javascript
-<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 ````
 
 Bower
