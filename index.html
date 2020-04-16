@@ -30,8 +30,8 @@
 
     var myMap = L.map('map').setView([52.06, 7.40], 10);
 
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(myMap);
 
 
@@ -74,6 +74,11 @@
             position: "topright",
             layer: testlayer,
             range: true
+        });
+
+
+        sliderControl.on('rangechanged',function (e) {
+            console.log(e.markers)
         });
 
         //Make sure to add the slider to the map ;-)
