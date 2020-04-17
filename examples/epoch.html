@@ -50,7 +50,8 @@
             layer: testlayer,
             timeAttribute: "epoch",
             isEpoch: true,
-            range: true
+            range: true,
+            rezoom: 10,
         });
 
         //Make sure to add the slider to the map ;-)
@@ -78,7 +79,8 @@
     layerGroup = L.layerGroup([marker1, marker3, marker2, polyline ]);
     var sliderControl4 = L.control.sliderControl({
         layer: layerGroup,
-        alwaysShowDate: true
+        alwaysShowDate: true,
+        rezoom: 10,
     });
     myMap.addControl(sliderControl4);
     sliderControl4.startSlider();

@@ -7,6 +7,8 @@ The [Leaflet](http://leafletjs.com/) Time-Slider enables you to dynamically add 
 
 Check out the [Demo](https://falke-design.github.io/LeafletSlider/)!
 
+With two silders [Epoch.html](https://falke-design.github.io/LeafletSlider/examples/epoch.html)!
+
 
 Usage
 -----
