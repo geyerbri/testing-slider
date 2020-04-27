@@ -49,11 +49,26 @@ L.Control.SliderControl = L.Control.extend({
         this.options.markers = [];
 
         function compare( a, b ) {
-            if ( a.options[options.timeAttribute] < b.options[options.timeAttribute] ){
-                return -1;
+            var valA = null;
+            var valB = null;
+
+            if(a.feature.properties[options.timeAttribute]){
+                valA = a.feature.properties[options.timeAttribute];
+            }else if(a.options[options.timeAttribute]){
+                valA = a.options[options.timeAttribute];
             }
-            if ( a.options[options.timeAttribute] > b.options[options.timeAttribute] ){
-                return 1;
+            if(b.feature.properties[options.timeAttribute]){
+                valB = b.feature.properties[options.timeAttribute];
+            }else if(b.options[options.timeAttribute]){
+                valB = b.options[options.timeAttribute];
+            }
+            if(valA && valB) {
+                if (valA < valB) {
+                    return -1;
+                }
+                if (valA > valB) {
+                    return 1;
+                }
             }
             return 0;
         }

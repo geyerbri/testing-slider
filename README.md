@@ -13,7 +13,7 @@ With two silders [Epoch.html](https://falke-design.github.io/LeafletSlider/examp
 Usage
 -----
 Add:
-* ``SliderControl.js`` [CDN](https://cdn.jsdelivr.net/gh/Falke-Design/LeafletSlider/src/SliderControl.js)
+* ``SliderControl.js`` [CDN](https://cdn.jsdelivr.net/gh/Falke-Design/LeafletSlider@latest/dist/leaflet.SliderControl.min.js)
 * [JQuery](https://cdnjs.com/libraries/jquery)
 * [JQueryUI](https://cdnjs.com/libraries/jqueryui)
 
