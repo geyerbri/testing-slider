@@ -52,12 +52,12 @@ L.Control.SliderControl = L.Control.extend({
             var valA = null;
             var valB = null;
 
-            if(a.feature.properties[options.timeAttribute]){
+            if(a.features && a.features.properties && a.feature.properties[options.timeAttribute]){
                 valA = a.feature.properties[options.timeAttribute];
             }else if(a.options[options.timeAttribute]){
                 valA = a.options[options.timeAttribute];
             }
-            if(b.feature.properties[options.timeAttribute]){
+            if(b.features && b.features.properties && b.feature.properties[options.timeAttribute]){
                 valB = b.feature.properties[options.timeAttribute];
             }else if(b.options[options.timeAttribute]){
                 valB = b.options[options.timeAttribute];
