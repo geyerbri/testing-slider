@@ -163,7 +163,7 @@
 	// Create an options object that uses the functions above for each marker in the group
 	var optionsObject1 = {
   	    // If creating multiple groups, specify an overarching time for all of the items in this group
-	    time: '1992',
+	//    time: '1992',
 	    onEachFeature: addToGroup1
 	};
 	/*
@@ -175,7 +175,7 @@
 	}
 	*/
 	// For single group, load dataset, popups, etc. into geoJSON layer
-//	L.geoJSON(dataset1, optionsObject1);
+	L.geoJSON(dataset1, optionsObject1);
 	/*
 	// For multiple groups, remove function above and instead create new variables for each group, using their dataset and function
 	var fullGroup1 = L.geoJSON(dataset1, optionsObject1);
