@@ -54,7 +54,7 @@
     });
     
     
-    layerGroup = L.layerGroup([marker1, marker2, marker3, polyline]);
+    layerGroup = L.layerGroup([marker1, marker2, marker3, polyline]); 
     var sliderControl = L.control.sliderControl({layer:layerGroup, follow: true});
     myMap.addControl(sliderControl);
     sliderControl.startSlider();
