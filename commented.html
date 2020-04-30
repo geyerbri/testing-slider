@@ -157,6 +157,7 @@
  	//      feature.properties.icon
 	//      // or define one set of icon settings for the entire group here
 	//  );
+	    layer.bindPopup(content, {closeButton: true});
 	};
 	
 	// Create an options object that uses the functions above for each marker in the group
@@ -189,7 +190,7 @@
 	//    layer: group1,
 	    layer: multipleLayerGroups,
 	    alwaysShowDate: true,
-            showAllPopups: false
+//            showAllPopups: false
 	});
 
 	// Add the slider to the map
