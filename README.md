@@ -9,6 +9,7 @@ Check out the [Demo](https://falke-design.github.io/LeafletSlider/)!
 
 With two silders [Epoch.html](https://falke-design.github.io/LeafletSlider/examples/epoch.html)!
 
+Popup Demo: [Popup.html](https://falke-design.github.io/LeafletSlider/examples/popup.html)
 
 Usage
 -----
@@ -62,6 +63,10 @@ The layers must have the following structure:
 |rezoom| null | You can use the rezoom property to ensure the markers being displayed remain in view. The integer value will be the maximum zoom level.|
 |orderMarkers| true| Orders the markers by the timeAttribute |
 |orderDesc| false | Order the markers descending (only work if orderMarkers is true)|
+|popupContent| ' ' | Custom popup content if marker has no popup|
+|popupOptions| {} | Popup options for markers with no default popup [popup-options](https://leafletjs.com/reference-1.6.0.html#popup-l-popup)|
+|showAllPopups| true | To show all popups, instead of one. Same as popup option "autoClose: false"|
+
 
 Add options on creating the control
 ```javascript
